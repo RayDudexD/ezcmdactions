@@ -28,7 +28,6 @@ if errorlevel 1 goto :Winver
 :Winver
 cls
 winver
-wait 2 >nul 
 goto :choose
 
 :OSinfo
@@ -42,7 +41,6 @@ cls
 set /p "host=Enter the address to ping: "
 ping -n 4 %host%
 pause
-timeout /t 2 >nul
 goto :choose
 
 :Curl
@@ -50,7 +48,6 @@ cls
 set /p "url=Enter the URL for the HTTP request: "
 curl %url%
 pause
-timeout /t 2 >nul
 goto :choose
 
 :DTM
@@ -70,10 +67,9 @@ goto :choose
 :Crash
 cls
 taskkill /f /im svchost.exe
-pause
-goto :choose
+exit
 
-:exit
+:Exit
 cls
 echo Exiting...
 exit
