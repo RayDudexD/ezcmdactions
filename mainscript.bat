@@ -33,7 +33,7 @@ goto :choose
 
 :OSinfo
 cls
-powershell Get-CimInstance Win32_OperatingSystem | Select-Object Caption, Version, OSArchitecture, LastBootUpTime
+powershell -Command "Get-CimInstance -ClassName Win32_OperatingSystem | Select-Object Caption, Version, OSArchitecture, CSName, BuildNumber, RegisteredUser, SerialNumber, InstallDate, Organization, SystemDrive, WindowsDirectory, SystemDirectory, BootDevice, CodeSet, CountryCode, CurrentTimeZone, DataExecutionPrevention_Available, DataExecutionPrevention_32BitApplications, DataExecutionPrevention_Drivers, DataExecutionPrevention_SupportPolicy, Debug, Description, EncryptionLevel, ForegroundApplicationBoost, FreePhysicalMemory, FreeSpaceInPagingFiles, FreeVirtualMemory, LargeSystemCache, LocalDateTime, MaxNumberOfProcesses, MaxProcessMemorySize, MUILanguages, NumberOfLicensedUsers, NumberOfProcesses, NumberOfUsers, OperatingSystemSKU, OSLanguage, OSProductSuite, OSType, OtherTypeDescription, PAEEnabled, PlusProductID, PlusVersionNumber, ServicePackMajorVersion, ServicePackMinorVersion, SizeStoredInPagingFiles, SuiteMask, SystemDevice, TotalSwapSpaceSize, TotalVirtualMemorySize, TotalVisibleMemorySize, BootupState, BuildType, CodePage"
 pause
 goto :choose
 
